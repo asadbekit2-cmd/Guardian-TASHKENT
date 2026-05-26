@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Guardian - Eco Defender</title>
+    <!-- Google Fonts for premium game typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Device Wrapper for Desktop Screens (simulates real smartphone) -->
+    <div class="device-wrapper">
+        <div class="device-screen">
+            
+            <!-- Mobile Status Bar (Signal, Time, Battery) -->
+            <div class="status-bar">
+                <div class="status-time" id="clock">12:00</div>
+                <div class="status-notch"></div>
+                <div class="status-icons">
+                    <span class="icon-signal">📶</span>
+                    <span class="icon-wifi">📶</span>
+                    <span class="icon-battery">🔋</span>
+                </div>
+            </div>
+
+            <!-- Home Page Screen Container -->
+            <div id="home-page-screen" class="game-screen active">
+                
+                <!-- TOP PROFILE COMPONENT (Using HoomePage_Profile_BG.png) -->
+                <div class="profile-header-container">
+                    <div class="profile-header-bg">
+                        <!-- Content inside the profile header -->
+                        <div class="profile-content">
+                            <div class="profile-avatar-wrapper">
+                                <img src="Assets/Buttons/Button_Profile.png" alt="Profile Icon" class="profile-avatar">
+                            </div>
+                            <div class="profile-info">
+                                <h3 class="profile-name">Eco Guardian</h3>
+                                <div class="profile-level-badge">
+                                    <span class="lvl-label">LVL</span>
+                                    <span class="lvl-val">1</span>
+                                </div>
+                            </div>
+                            <div class="profile-stats">
+                                <div class="stat-item rank-item">
+                                    <img src="Assets/Ranks/Rank_E_.png" alt="Rank E" class="rank-badge">
+                                    <span class="stat-label">Rank E</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIDDLE GAME TITLE -->
+                <div class="game-title-container">
+                    <h1 class="game-main-title">GUARDIAN</h1>
+                    <p class="game-subtitle">ECO DEFENDER</p>
+                </div>
+
+                <!-- CENTER PLAY BUTTON CONTAINER -->
+                <div class="center-btn-container">
+                    <button class="start-btn" id="start-game-btn" aria-label="Start Game">
+                        <img src="Assets/Buttons/start_button.png" alt="Start Button" class="start-btn-img">
+                        <div class="btn-glow-ring"></div>
+                    </button>
+                </div>
+
+                <!-- FOOTER NAVIGATION (Beautiful Mobile-Style Control Bar) -->
+                <div class="home-footer">
+                    <button class="footer-btn" id="settings-btn">
+                        <img src="Assets/Buttons/Button_Settings.png" alt="Settings">
+                    </button>
+                    <button class="footer-btn" id="badges-btn">
+                        <img src="Assets/Buttons/Button_badges.png" alt="Badges">
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- AR Scanner Screen Container (Section 4) -->
+            <div id="scanner-view" class="game-screen">
+                
+                <!-- Exit Close Button -->
+                <button class="close-btn" id="scanner-close-btn" aria-label="Exit Scanner">
+                    <img src="Assets/Buttons/Button_close.png" alt="Exit Scanner">
+                </button>
+                
+                <!-- Immersive AR Scanner Viewfinder Area -->
+                <div class="scanner-viewfinder-container">
+                    <div class="scanner-frame-wrapper">
+                        <img src="Assets/Background/AR_Scanner.png" alt="AR Scanner Viewfinder" class="scanner-viewfinder-img">
+                        
+                        <!-- Sweeping green scanning laser line -->
+                        <div class="scanner-laser-line"></div>
+                        
+                        <!-- Scanning target reticles and statuses -->
+                        <div class="scanner-status-text">SYSTEM: SCANNING AREA...</div>
+                        <div class="scanner-reticle-box"></div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Scanner Activation Button -->
+                <div class="scanner-action-bar">
+                    <button class="scan-action-btn" id="scan-trigger-btn" aria-label="Start Scanning">
+                        <img src="Assets/Buttons/Scan_Button.png" alt="Scan Button" class="scan-btn-img">
+                        <div class="scan-pulse-ring"></div>
+                    </button>
+                    <span class="scan-action-label">ATROFNI SKANERLASH</span>
+                </div>
+                
+            </div>
+
+            <!-- Destroy Screen Container (Section 5) -->
+            <div id="destroy-view" class="game-screen">
+                
+                <!-- Exit Close Button -->
+                <button class="close-btn" id="destroy-close-btn" aria-label="Exit Combat">
+                    <img src="Assets/Buttons/Button_close.png" alt="Exit Combat">
+                </button>
+                
+                <!-- Target HUD (Combat interface indicator) -->
+                <div class="destroy-hud-container">
+                    <div class="destroy-target-hud">
+                        <div class="hud-scanner-glow"></div>
+                        <div class="hud-corners">
+                            <span class="c-tl"></span><span class="c-tr"></span>
+                            <span class="c-bl"></span><span class="c-br"></span>
+                        </div>
+                        <div class="hud-combat-title">TARGET LOCKED</div>
+                        <div class="hud-combat-subtitle">MONSTR ANIQLANDI!</div>
+                        
+                        <!-- Mini animated sonar scanner inside target grid -->
+                        <div class="hud-grid-ring">
+                            <div class="hud-sonar-line"></div>
+                        </div>
+                        
+                        <div class="hud-warning-text">EMERGENCY: PURGE IMMEDIATE</div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Destroy/Attack Activation Button -->
+                <div class="destroy-action-bar">
+                    <button class="destroy-action-btn" id="destroy-trigger-btn" aria-label="Destroy Target">
+                        <img src="Assets/Buttons/Destroy_Button.png" alt="Destroy Button" class="destroy-btn-img">
+                        <div class="destroy-fire-ring"></div>
+                    </button>
+                    <span class="destroy-action-label">MONSTRNI YO'Q QILISH</span>
+                </div>
+                
+            </div>
+
+            <!-- Match-3 Battle Screen Container (Section 6) -->
+            <div id="match3-game-view" class="game-screen">
+                
+                <!-- Exit Close Button to leave battle early -->
+                <button class="close-btn" id="match3-close-btn" aria-label="Exit Battle">
+                    <img src="Assets/Buttons/Button_close.png" alt="Exit Battle">
+                </button>
+                
+                <!-- Top Monster Dashboard (Game_Monstr_Background.png) -->
+                <div class="monster-dashboard-container">
+                    <div class="monster-card">
+                        <!-- Monster avatar display -->
+                        <div class="monster-photo-wrapper">
+                            <img src="Assets/Monsters/Monstr_LVL1_photo.png" id="battle-monster-img" alt="Active Monster">
+                        </div>
+                        
+                        <!-- Healthbar and timer display -->
+                        <div class="monster-status-block">
+                            <div class="monster-header-row">
+                                <span class="monster-name-label" id="battle-monster-name">ECO MONSTR (LVL 1)</span>
+                                <span class="monster-timer-label" id="battle-timer-text">45s</span>
+                            </div>
+                            
+                            <!-- Progress bars -->
+                            <div class="monster-bar-track hp-track">
+                                <div class="monster-bar-fill hp-fill" id="battle-hp-fill" style="width: 100%;"></div>
+                                <span class="bar-value-text" id="battle-hp-text">100% HP</span>
+                            </div>
+                            
+                            <div class="monster-bar-track timer-track">
+                                <div class="monster-bar-fill timer-fill" id="battle-timer-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 8x8 Match-3 Game Grid Setka Container -->
+                <div class="match3-grid-container">
+                    <div class="match3-grid" id="match3-grid-board">
+                        <!-- 8x8 items will be dynamically generated by JS -->
+                    </div>
+                </div>
+                
+                <!-- Bottom game details panel -->
+                <div class="match3-info-panel">
+                    <span class="match3-points-label">G'ALABA QOZONISH UCHUN MONSTRNI TOZALANG!</span>
+                </div>
+                
+            </div>
+
+            <!-- ═══ VICTORY SCREEN (Section 6) ═══
+                 Background: HomePage_Background.png
+                 Panel:      Victory_Image.png  (stars + button overlaid inside)
+            -->
+            <div id="victory-modal" class="result-screen victory-screen">
+                <div class="vcard-wrap">
+                    <img src="Assets/Victory_Image.png" alt="Victory!" class="vcard-img">
+
+                    <!-- Stars overlaid on the image -->
+                    <div class="vcard-stars">
+                        <img src="Assets/Victory_Star.png" alt="★" class="vstar s1">
+                        <img src="Assets/Victory_Star.png" alt="★" class="vstar s2">
+                        <img src="Assets/Victory_Star.png" alt="★" class="vstar s3">
+                    </div>
+
+                    <!-- Continue button overlaid at bottom of image -->
+                    <button id="victory-continue-btn" class="vcard-btn" aria-label="Continue">
+                        <img src="Assets/Victory_Continu_BTN.png" alt="Continue">
+                    </button>
+                </div>
+            </div>
+
+            <!-- ═══ DEFEAT SCREEN (Section 6) ═══
+                 Background: Game_Background.png
+                 Panel:      Defeat_Image.png  (button overlaid inside)
+            -->
+            <div id="defeat-modal" class="result-screen defeat-screen">
+                <div class="dcard-wrap">
+                    <img src="Assets/Defeat_Image.png" alt="Defeat!" class="dcard-img">
+
+                    <!-- Try Again button overlaid at bottom of image -->
+                    <button id="defeat-continue-btn" class="dcard-btn" aria-label="Try Again">
+                        <img src="Assets/Defeat_Button.png" alt="Try Again">
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Settings Modal Panel Overlay (Section 2) -->
+            <div id="settings-modal" class="modal-overlay">
+                <div class="settings-container">
+                    
+                    <!-- Close Button -->
+                    <button class="close-btn" id="settings-close-btn" aria-label="Close Settings">
+                        <img src="Assets/Buttons/Button_close.png" alt="Close Settings">
+                    </button>
+                    
+                    <h2 class="settings-title">SOZLAMALAR</h2>
+                    
+                    <!-- Controls Container (Music and Volume Buttons) -->
+                    <div class="settings-controls-group">
+                        <div class="control-toggle-item">
+                            <button class="settings-btn-item active" id="modal-music-btn" aria-label="Music Toggle">
+                                <img src="Assets/Buttons/Music_Button.png" alt="Music">
+                            </button>
+                            <span class="control-label">MUSIQA</span>
+                        </div>
+                        <div class="control-toggle-item">
+                            <button class="settings-btn-item active" id="modal-volume-btn" aria-label="Volume Toggle">
+                                <img src="Assets/Buttons/Volume_Button.png" alt="Volume">
+                            </button>
+                            <span class="control-label">OVOZ</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Volume Controller Slider Track and Ball -->
+                    <div class="volume-slider-section">
+                        <span class="slider-title">OVOZ BALANDLIGI</span>
+                        <div class="slider-wrapper" id="volume-slider-wrapper">
+                            <!-- Background Track -->
+                            <img src="Assets/Buttons/Volume_Controller.png" alt="Slider Track" class="slider-track-bg">
+                            
+                            <!-- Slider visual fill (colored line indicator overlay) -->
+                            <div class="slider-track-fill" id="volume-track-fill"></div>
+                            
+                            <!-- Draggable Ball Knob -->
+                            <img src="Assets/Buttons/Volume_Controller_ball.png" alt="Slider Knob" class="slider-knob-ball" id="volume-knob-ball">
+                        </div>
+                        <div class="volume-value-text" id="volume-val-display">80%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Modal Panel Overlay (Section 3) -->
+            <div id="leaderboard-modal" class="modal-overlay">
+                <div class="leaderboard-container">
+                    
+                    <!-- Close Button -->
+                    <button class="close-btn" id="leaderboard-close-btn" aria-label="Close Leaderboard">
+                        <img src="Assets/Buttons/Button_close.png" alt="Close Leaderboard">
+                    </button>
+                    
+                    <h2 class="leaderboard-title">UNVONLAR</h2>
+                    
+                    <!-- Top Active Rank Competing Area -->
+                    <div class="active-rank-showcase">
+                        <span class="active-rank-sub">KURASHILAYOTGAN RANQ</span>
+                        <div class="active-rank-badge-wrapper">
+                            <img src="Assets/Ranks/Rank_E_.png" alt="Active Rank E" class="active-rank-img">
+                            <div class="rank-pulse-ring"></div>
+                        </div>
+                        <div class="active-rank-name">Rank E (Boshlovchi)</div>
+                        <div class="rank-progress-container">
+                            <div class="rank-progress-text">
+                                <span>Rivojlanish: 1,250 / 2,000 ball</span>
+                                <span class="next-rank-label">Keyingi: Rank D</span>
+                            </div>
+                            <div class="rank-progress-bar">
+                                <div class="rank-progress-fill" style="width: 62.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Leaderboard Table Card (Leader_Table.png Background) -->
+                    <div class="leaderboard-table-card">
+                        <div class="leader-table-header">
+                            <span class="col-pos">#</span>
+                            <span class="col-user">O'YINCHI</span>
+                            <span class="col-points">BALL</span>
+                            <span class="col-rank">RANQ</span>
+                        </div>
+                        
+                        <div class="leader-table-body">
+                            <!-- Row 1: Master Bin (Rank A) -->
+                            <div class="leader-row rank-1">
+                                <span class="row-pos">1</span>
+                                <div class="row-player">
+                                    <div class="avatar-ring gold">🥇</div>
+                                    <span class="player-name">Master Bin</span>
+                                </div>
+                                <span class="player-points">4,820 ball</span>
+                                <img src="Assets/Ranks/Rank_A_.png" alt="Rank A" class="row-rank-badge">
+                            </div>
+                            
+                            <!-- Row 2: GreenHero (Rank B) -->
+                            <div class="leader-row rank-2">
+                                <span class="row-pos">2</span>
+                                <div class="row-player">
+                                    <div class="avatar-ring silver">🥈</div>
+                                    <span class="player-name">GreenHero</span>
+                                </div>
+                                <span class="player-points">3,450 ball</span>
+                                <img src="Assets/Ranks/Rank_B_.png" alt="Rank B" class="row-rank-badge">
+                            </div>
+                            
+                            <!-- Row 3: EcoShield (Rank C) -->
+                            <div class="leader-row rank-3">
+                                <span class="row-pos">3</span>
+                                <div class="row-player">
+                                    <div class="avatar-ring bronze">🥉</div>
+                                    <span class="player-name">EcoShield</span>
+                                </div>
+                                <span class="player-points">2,600 ball</span>
+                                <img src="Assets/Ranks/Rank_C_.png" alt="Rank C" class="row-rank-badge">
+                            </div>
+                            
+                            <!-- Row 4: TrashBuster (Rank D) -->
+                            <div class="leader-row">
+                                <span class="row-pos">4</span>
+                                <div class="row-player">
+                                    <div class="avatar-ring">👤</div>
+                                    <span class="player-name">TrashBuster</span>
+                                </div>
+                                <span class="player-points">1,980 ball</span>
+                                <img src="Assets/Ranks/Rank_D_.png" alt="Rank D" class="row-rank-badge">
+                            </div>
+                            
+                            <!-- Row 5: Current User (Rank E) -->
+                            <div class="leader-row current-user">
+                                <span class="row-pos">5</span>
+                                <div class="row-player">
+                                    <div class="avatar-ring user-active">
+                                        <img src="Assets/Buttons/Button_Profile.png" alt="Profile Icon" class="row-user-avatar">
+                                    </div>
+                                    <span class="player-name">Siz (Eco Guardian)</span>
+                                </div>
+                                <span class="player-points">1,250 ball</span>
+                                <img src="Assets/Ranks/Rank_E_.png" alt="Rank E" class="row-rank-badge">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation Bar indicator for iPhone-style screens -->
+            <div class="home-indicator"></div>
+        </div>
+    </div>
+
+    <!-- Script file -->
+    <script src="game.js"></script>
+</body>
+</html>
